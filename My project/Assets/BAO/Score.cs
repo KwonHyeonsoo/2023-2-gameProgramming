@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 using TMPro;
 using System;
 
@@ -10,6 +11,8 @@ public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
     public TMPro.TextMeshProUGUI ScoreText;
+
+
     public float distance;
     public Transform player;
 
@@ -19,6 +22,7 @@ public class Score : MonoBehaviour
     }
     void Update() {
         distance=Vector3.Distance(player.position, transform.position);
+
         ScoreText.text = "Score: " + ((int)(distance)).ToString();
     }
 
@@ -27,4 +31,5 @@ public class Score : MonoBehaviour
         GUI.Label(new Rect(750, 10, 100, 20), distance.ToString(),TextStyle);
     }
     */
+
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerStat : MonoBehaviour
 {
     public GameOverScreen GameOverScreen;
+
     [SerializeField] private float maxHealth;
 
     public HealthBar healthBar;
@@ -13,6 +14,7 @@ public class playerStat : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+
         healthBar.SetSliderMax(maxHealth);
     }
     private void Update()
@@ -43,5 +45,6 @@ public class playerStat : MonoBehaviour
         GameOverScreen.Setup(1);
 
         
+
     }
 }
