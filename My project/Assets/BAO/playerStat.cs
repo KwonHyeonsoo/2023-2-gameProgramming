@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class playerStat : MonoBehaviour
 {
+    public GameOverScreen GameOverScreen;
+
     [SerializeField] private float maxHealth;
 
     public HealthBar healthBar;
@@ -40,10 +42,9 @@ public class playerStat : MonoBehaviour
     {
         Debug.Log("You died!");
 
-        //Play death animation
+        GameOverScreen.Setup(1);
 
-        //Activate death screen
+        
 
-        //...
     }
 }
