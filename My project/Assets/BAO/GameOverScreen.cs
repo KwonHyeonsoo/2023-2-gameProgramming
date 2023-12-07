@@ -32,7 +32,7 @@ public class GameOverScreen : MonoBehaviour
 
    }
    public void RestartButton(){
-        SceneManager.LoadScene("SampleScene"); //게임 있는 Scene
+        SceneManager.LoadScene("SampleScene1"); //게임 있는 Scene
 
    }
    public void ExitButton() {
