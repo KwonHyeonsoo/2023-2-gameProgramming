@@ -38,6 +38,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 0.25f;
     private bool m_jumpInput = false;
+    public AudioSource Jump;
 
     private bool m_isGrounded;
 
@@ -109,6 +110,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         if (!m_jumpInput && Input.GetKey(KeyCode.Space))
         {
             m_jumpInput = true;
+            Jump.Play();
         }
     }
 

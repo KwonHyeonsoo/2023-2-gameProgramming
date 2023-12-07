@@ -5,6 +5,11 @@ using UnityEngine;
 public class playerStat : MonoBehaviour
 {
     public GameOverScreen GameOverScreen;
+    public AudioSource audioSource;
+    public AudioClip clip;
+    [SerializeField] private Transform player;
+    public float volume=0.5f;
+    
 
     [SerializeField] private float maxHealth;
 
@@ -25,7 +30,9 @@ public class playerStat : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            Die();
+            audioSource.PlayOneShot(clip, volume);
+            Invoke("Die", 0.5f);
+            //Die();
         }
     }
     public void TakeDamage(float amount)
@@ -41,8 +48,8 @@ public class playerStat : MonoBehaviour
     private void Die()
     {
         Debug.Log("You died!");
-
         
+        player.gameObject.GetComponent<SimpleSampleCharacterControl>().enabled = false;
         GameOverScreen.gameObject.SetActive(true);
 
 

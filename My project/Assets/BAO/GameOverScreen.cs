@@ -12,6 +12,7 @@ public class GameOverScreen : MonoBehaviour
    public TMPro.TextMeshProUGUI ScoreTextGA;
    public TMPro.TextMeshProUGUI H_ScoreTextGA;
    public int highscore;
+   
 
    void Start()
 {     
@@ -29,6 +30,7 @@ public class GameOverScreen : MonoBehaviour
  
           PlayerPrefs.SetInt ("highscore", highscore);
     }
+
 
    }
    public void RestartButton(){
