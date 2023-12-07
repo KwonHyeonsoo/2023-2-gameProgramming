@@ -42,9 +42,9 @@ public class playerStat : MonoBehaviour
     {
         Debug.Log("You died!");
 
-        GameOverScreen.Setup(0);
-
         
+        GameOverScreen.gameObject.SetActive(true);
+
 
     }
 }

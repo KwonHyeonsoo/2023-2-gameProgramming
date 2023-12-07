@@ -12,26 +12,23 @@ public class GameOverScreen : MonoBehaviour
    public TMPro.TextMeshProUGUI ScoreTextGA;
    public TMPro.TextMeshProUGUI H_ScoreTextGA;
    public int highscore;
-   public int score;
+
    void Start()
-{
-    score = 0;
- 
+{     
     highscore = PlayerPrefs.GetInt ("highscore", highscore);
-    H_ScoreTextGA.text = "High Point: " + highscore.ToString();
+    H_ScoreTextGA.text = "High Point: "+  highscore.ToString();
 }
 
    public void Setup(int score) {
-        gameObject.SetActive(true);
         ScoreTextGA.text = "YOUR POINTS: " + score.ToString() + "M";
-     if (score > highscore){
-        highscore = score;
-        H_ScoreTextGA.text = "HighScore: " + score;
 
-        PlayerPrefs.SetInt ("highscore", highscore);
+
+        if (score > highscore){
+          highscore = score;
+          H_ScoreTextGA.text = "High Point: " + score;
+ 
+          PlayerPrefs.SetInt ("highscore", highscore);
     }
-   }
-   public void Update(){
 
    }
    public void RestartButton(){
