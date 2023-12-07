@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/KHS_Scene/Final_MainMenu.unity
+    guid: aef7837e4a3a6ed45b47c3ccecb9d345
+  - enabled: 1
     path: Assets/Scenes/KHS_Scene/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/KHS_Scene/Fianl.unity
+    guid: e62d519817f07b940ac3cac5d8f7556f
   m_configObjects: {}

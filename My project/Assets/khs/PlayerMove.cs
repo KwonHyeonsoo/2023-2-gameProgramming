@@ -42,7 +42,7 @@ public class PlayerMove : MonoBehaviour
     {
 
 
-        if (coyoteTime>0 && Input.GetKey(KeyCode.Space) ) Rigid.velocity = Vector3.up * jumpForce;
+        if (coyoteTime > 0 && Input.GetKey(KeyCode.Space)) Rigid.velocity = Vector3.up * jumpForce;
 
     }
 
@@ -53,7 +53,7 @@ public class PlayerMove : MonoBehaviour
             isGround = true;
             coyoteTime = 0.5f;
         }
-        if(collision.gameObject.tag == "cube1" || collision.gameObject.tag == "cube2") 
+        if (collision.gameObject.tag == "cube1" || collision.gameObject.tag == "cube2")
         {
             staticValues.playerOnCubePos = collision.gameObject.transform.position;
             mapManager.setPlayerPosition(collision.gameObject.transform.position);

@@ -30,10 +30,16 @@ public class playerStat : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+            Die();
+            Time.timeScale = 0;
+
             audioSource.PlayOneShot(clip, volume);
             Invoke("Die", 0.5f);
             //Die();
+
         }
+
+        if (transform.position.y < -20) currentHealth = 0;
     }
     public void TakeDamage(float amount)
     {
@@ -47,7 +53,7 @@ public class playerStat : MonoBehaviour
     }
     private void Die()
     {
-        Debug.Log("You died!");
+
         
         player.gameObject.GetComponent<SimpleSampleCharacterControl>().enabled = false;
         GameOverScreen.gameObject.SetActive(true);

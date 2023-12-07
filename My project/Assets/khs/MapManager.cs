@@ -38,13 +38,16 @@ public class MapManager : MonoBehaviour
 			_generatePos = PlayerPos +  new Vector3( (cubeSize.x*2*i)-cubeSize.x , 0, cubeSize.z*5/4);
 			GameObject obj = Instantiate(_mapPrefabList[i], _generatePos, Quaternion.identity, transform);
 
-			//if (bol > 0.5f) 
+			if (bol > 0.7f) 
 				MonsterManager.monsterSpawn(_generatePos);
-			//else if (i > 0 && bol > 0.5)
+			else
 			{
-				//else PotionManager.potionSpawn(_generatePos, (int)cubeSize.x, (int)cubeSize.y);
+				bol = Random.value;
+				MonsterManager.monsterSpawn(_generatePos);
+				PotionManager.potionSpawn(_generatePos);
 			}
-
+			if (bol > 0.5f&&i==0 || bol < 0.5&&i==1)
+				PotionManager.potionSpawn(_generatePos);
 		}
 		NavMeshSurface[] surfaces = gameObject.GetComponentsInChildren<NavMeshSurface>();
 

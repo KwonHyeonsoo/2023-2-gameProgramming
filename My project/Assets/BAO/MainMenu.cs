@@ -16,4 +16,11 @@ public class MainMenu : MonoBehaviour
     public void exitGame() {
         Application.Quit();
     }
+
+    public void playFinalGame()
+    {
+        SceneManager.LoadScene("Fianl");
+        Time.timeScale = 1;
+    }
+
 }

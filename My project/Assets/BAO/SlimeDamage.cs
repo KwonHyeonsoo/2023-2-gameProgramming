@@ -5,12 +5,12 @@ public class SlimeDamage : MonoBehaviour
 {
     public float damage;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
-            other.GetComponent<playerStat>().TakeDamage(damage);
-            
+            collision.gameObject.GetComponent<playerStat>().TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }
