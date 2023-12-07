@@ -16,7 +16,9 @@ public class Follow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        targetTransform = GameObject.FindWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
+        
 
     }
 
@@ -81,7 +83,7 @@ public class Follow : MonoBehaviour
 
         navMeshAgent.Move(steering * Time.deltaTime);
         navMeshAgent.destination = targetTransform.position;
-        transform.LookAt(Camera.main.transform.position);
+        transform.LookAt(targetTransform.position);
         transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
     }
 }
