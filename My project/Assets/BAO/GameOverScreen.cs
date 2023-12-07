@@ -11,7 +11,12 @@ public class GameOverScreen : MonoBehaviour
     // Start is called before the first frame update
    public TMPro.TextMeshProUGUI ScoreTextGA;
    public TMPro.TextMeshProUGUI H_ScoreTextGA;
+<<<<<<< HEAD
    private int highscore;
+=======
+   public int highscore;
+   
+>>>>>>> 6b8f73f9cba18f826b295e7c58531b686230cea0
 
     void OnEnable()
     {
@@ -49,6 +54,7 @@ public class GameOverScreen : MonoBehaviour
  
           PlayerPrefs.SetInt ("highscore", highscore);
     }
+
 
    }
    public void RestartButton(){
