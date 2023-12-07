@@ -8,5 +8,6 @@ public class destroyOnDiatance : MonoBehaviour
     void Update()
     {
         if (staticValues.playerOnCubePos.z - 1000 > transform.position.z) Destroy(gameObject);
+        if (transform.position.y < -20) Destroy(gameObject);
     }
 }

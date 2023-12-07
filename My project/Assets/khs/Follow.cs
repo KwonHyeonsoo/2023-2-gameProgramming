@@ -14,7 +14,7 @@ public class Follow : MonoBehaviour
     public float alignmentWeight = 1.0f;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         targetTransform = GameObject.FindWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -81,7 +81,7 @@ public class Follow : MonoBehaviour
         steering += cohesionDirection * cohesionWeight;
         steering.Normalize();
 
-        navMeshAgent.Move(steering * Time.deltaTime);
+        navMeshAgent.Move(steering * Time.deltaTime * 1.3f);
         navMeshAgent.destination = targetTransform.position;
         transform.LookAt(targetTransform.position);
         transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);

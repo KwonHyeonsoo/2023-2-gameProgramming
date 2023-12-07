@@ -23,9 +23,10 @@ public class Score : MonoBehaviour
     }
     void Update() {
         distance=Vector3.Distance(player.position, transform.position);
-
+        distance = player.position.z;
+        staticValues.playerScore = distance;
         ScoreText.text = "Score: " + ((int)(distance)).ToString();
-        GameOverScreen.Setup((int)distance);
+        //GameOverScreen.Setup((int)distance);
     }
 
     /*
