@@ -42,8 +42,8 @@ public class playerStat : MonoBehaviour
     {
         Debug.Log("You died!");
 
-        GameOverScreen.Setup(1);
-
+        
+        GameOverScreen.gameObject.SetActive(true);
         
 
     }

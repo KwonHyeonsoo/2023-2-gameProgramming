@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
     public TMPro.TextMeshProUGUI ScoreText;
-
+    public GameOverScreen GameOverScreen;
 
     public float distance;
     public Transform player;
@@ -24,6 +24,7 @@ public class Score : MonoBehaviour
         distance=Vector3.Distance(player.position, transform.position);
 
         ScoreText.text = "Score: " + ((int)(distance)).ToString();
+        GameOverScreen.Setup((int)distance);
     }
 
     /*
