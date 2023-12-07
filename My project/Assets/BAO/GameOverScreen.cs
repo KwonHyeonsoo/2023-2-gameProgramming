@@ -12,6 +12,7 @@ public class GameOverScreen : MonoBehaviour
    public TMPro.TextMeshProUGUI ScoreTextGA;
    public TMPro.TextMeshProUGUI H_ScoreTextGA;
    public int highscore;
+
    void Start()
 {     
     highscore = PlayerPrefs.GetInt ("highscore", highscore);
@@ -21,12 +22,14 @@ public class GameOverScreen : MonoBehaviour
    public void Setup(int score) {
         ScoreTextGA.text = "YOUR POINTS: " + score.ToString() + "M";
 
+
         if (score > highscore){
           highscore = score;
           H_ScoreTextGA.text = "High Point: " + score;
  
           PlayerPrefs.SetInt ("highscore", highscore);
     }
+
    }
    public void RestartButton(){
         SceneManager.LoadScene("SampleScene"); //게임 있는 Scene

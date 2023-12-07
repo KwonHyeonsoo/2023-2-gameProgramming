@@ -44,7 +44,7 @@ public class playerStat : MonoBehaviour
 
         
         GameOverScreen.gameObject.SetActive(true);
-        
+
 
     }
 }

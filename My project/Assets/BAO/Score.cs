@@ -13,6 +13,7 @@ public class Score : MonoBehaviour
     public TMPro.TextMeshProUGUI ScoreText;
     public GameOverScreen GameOverScreen;
 
+
     public float distance;
     public Transform player;
 
